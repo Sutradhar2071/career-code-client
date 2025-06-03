@@ -1,4 +1,5 @@
 import React, { use } from "react";
+import { Link } from "react-router";
 
 const JobList = ({ postedPromise }) => {
   const posted = use(postedPromise);
@@ -13,7 +14,7 @@ const JobList = ({ postedPromise }) => {
               <th></th>
               <th>Name</th>
               <th>Job</th>
-              <th>Favorite Color</th>
+              <th>View Applications</th>
             </tr>
           </thead>
           <tbody>
@@ -22,7 +23,7 @@ const JobList = ({ postedPromise }) => {
               <th>{index+1}</th>
               <td>{post.title}</td>
               <td>{post.deadline}</td>
-              <td>Blue</td>
+              <td><Link to={`/application/${post._id}`}>View Applications</Link></td>
             </tr>)
             }
             
